@@ -1,0 +1,17 @@
+# 运行时依赖：无第三方依赖。
+#
+# 本项目只用 Python 标准库（csv / json / os / re / datetime / argparse）。
+# 选零依赖是有意的设计取舍：产品工具要能在客户现场当场跑，
+# 「装不上 / 版本冲突 / 三个月后跑不起来」是最大的敌人。
+#
+# 唯一需要的开发期工具是 pytest（跑测试）：
+#     pip install pytest
+#
+# 特别说明：
+#   - 本项目不调用任何付费 API
+#   - 流程图用 Mermaid 文本输出（可粘贴进 GitHub/GitLab/Notion 渲染），
+#     **不依赖 Axure / XMind / Visio** 这类需安装的商业工具
+#   - 数据为各厂商公开产品资料，客户场景为自拟
+#
+# 验证过的运行环境：
+#     Python 3.12.8 / Windows

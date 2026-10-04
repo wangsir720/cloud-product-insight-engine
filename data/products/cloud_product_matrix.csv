@@ -1,0 +1,46 @@
+﻿vendor,layer,product_name,category_key,positioning,source_id,credibility,fetched_at,note
+Sugon,IaaS,曙光云,-,高端计算与算力服务，IaaS 面向 HPC 与 AI 集群场景,V1,secondary,2026-10-04,官网产品页未公开完整 SKU 清单
+Sugon,PaaS,曙光云 PaaS,-,平台层，含数据与 AI 平台能力,V1,secondary,2026-10-04,官网产品分类口径
+Sugon,DAAS,Sugon AI4S 平台,-,AI4S 算力服务，6 万卡集群与国家超算互联网,V1,secondary,2026-10-04,2025-04 发布会口径
+Sugon,MASS,先进计算服务,-,高端计算机与存储系统产品,V1,secondary,2026-10-04,2025 年报口径
+Sugon,SaaS,-,未查到,未查到 —— 官网未公开 SaaS 产品线分类,V1,unverified,2026-10-04,**未查到即留空，不推测**
+HuaweiCloud,IaaS,弹性云服务器 ECS,compute,通用计算，可弹性伸缩与自动伸缩,V2,official,2026-10-04,官网产品页
+HuaweiCloud,IaaS,裸金属服务器 BMS,compute,物理服务器，性能与隔离性优先,V2,official,2026-10-04,
+HuaweiCloud,IaaS,GPU 加速云服务器 GACS,gpu,GPU 弹性算力,V2,official,2026-10-04,
+HuaweiCloud,IaaS,对象存储服务 OBS,storage,稳定安全高效的云存储,V2,official,2026-10-04,
+HuaweiCloud,IaaS,弹性文件服务 SFS,storage,完全托管的共享文件存储,V2,official,2026-10-04,
+HuaweiCloud,IaaS,云硬盘 EVS,storage,块存储,V2,official,2026-10-04,
+HuaweiCloud,IaaS,虚拟私有云 VPC,network,网络隔离,V2,official,2026-10-04,
+HuaweiCloud,IaaS,弹性公网 IP EIP,network,独立公网 IP 资源,V2,official,2026-10-04,
+HuaweiCloud,PaaS,AI 开发平台 ModelArts,ai_platform,面向 AI 开发者的一站式开发平台,V2,official,2026-10-04,
+HuaweiCloud,PaaS,云数据库 GaussDB,database,企业级分布式数据库,V2,official,2026-10-04,
+HuaweiCloud,PaaS,云搜索服务 CSS,search,多条件检索与分析,V2,official,2026-10-04,
+HuaweiCloud,PaaS,函数工作流 FunctionGraph,serverless,事件驱动的函数编排,V2,official,2026-10-04,
+HuaweiCloud,PaaS,专属计算集群服务 DCC,hpc,资源物理隔离的专属计算资源池,V2,official,2026-10-04,
+Aliyun,IaaS,云服务器 ECS,compute,安全可靠弹性可伸缩的云计算服务,V3,official,2026-10-04,官网产品页
+Aliyun,IaaS,GPU 云服务器,gpu,GPU 弹性算力,V3,official,2026-10-04,
+Aliyun,IaaS,对象存储 OSS,storage,稳定安全高性价比高性能云存储,V3,official,2026-10-04,
+Aliyun,IaaS,文件存储 NAS / CPFS,storage,共享文件与并行文件存储,V3,official,2026-10-04,
+Aliyun,IaaS,负载均衡 SLB,network,按需分发的流量负载,V3,official,2026-10-04,
+Aliyun,IaaS,专有网络 VPC,network,网络隔离,V3,official,2026-10-04,
+Aliyun,IaaS,弹性高性能计算 E-HPC,hpc,高性能计算集群,V3,official,2026-10-04,
+Aliyun,PaaS,容器服务 Kubernetes 版 ACK,container,Kubernetes 托管服务,V3,official,2026-10-04,
+Aliyun,PaaS,容器计算服务 ACS,container,以 K8s 为界面的容器算力,V3,official,2026-10-04,
+Aliyun,PaaS,云数据库 RDS,database,全托管多引擎数据库,V3,official,2026-10-04,
+Aliyun,PaaS,云原生数据库 PolarDB,database,兼容 MySQL/PostgreSQL/Oracle,V3,official,2026-10-04,
+Aliyun,PaaS,人工智能平台 PAI,ai_platform,一站式 AI 开发训练推理服务,V3,official,2026-10-04,
+Aliyun,PaaS,大模型服务平台百炼,ai_platform,大模型推理训练与应用构建,V3,official,2026-10-04,
+Aliyun,PaaS,云原生大数据计算 MaxCompute,bigdata,企业级 SaaS 模式云数据仓库,V3,official,2026-10-04,
+Aliyun,PaaS,大数据开发治理平台 DataWorks,bigdata,智能数据开发治理平台,V3,official,2026-10-04,
+Aliyun,PaaS,函数计算 FC,serverless,事件驱动 Serverless 计算,V3,official,2026-10-04,
+Aliyun,MASS,云盒,-,专有云与混合云交付形态,V3,official,2026-10-04,官网产品分类
+TencentCloud,IaaS,云服务器 CVM,compute,弹性计算,V4,secondary,2026-10-04,官网产品页
+TencentCloud,IaaS,轻量应用服务器,compute,轻量入门,V4,secondary,2026-10-04,
+TencentCloud,IaaS,对象存储 COS,storage,云存储,V4,secondary,2026-10-04,
+TencentCloud,IaaS,云硬盘 CBS,storage,块存储,V4,secondary,2026-10-04,
+TencentCloud,IaaS,私有网络 VPC,network,网络隔离,V4,secondary,2026-10-04,
+TencentCloud,PaaS,TKE 容器服务,container,Kubernetes 托管服务,V4,secondary,2026-10-04,
+TencentCloud,PaaS,云数据库 TDSQL,database,分布式数据库,V4,secondary,2026-10-04,
+TencentCloud,PaaS,TI-ONE 机器学习平台,ai_platform,AI 开发训练平台,V4,secondary,2026-10-04,
+TencentCloud,PaaS,Serverless 云函数,serverless,事件驱动函数计算,V4,secondary,2026-10-04,
+TencentCloud,PaaS,大数据套件 EMR,bigdata,大数据平台,V4,secondary,2026-10-04,

@@ -1,0 +1,916 @@
+{
+  "requirements": [
+    {
+      "id": "REQ-2026-001",
+      "customer_industry": "政务",
+      "scenario": "客户是省级政务云运维中心，现在虚拟机太多管理麻烦，希望能把非核心业务放到云上统一管。另外他们问华为云、阿里的同类产品我们能不能对标讲讲。还有就是他们现在的分布式训练任务排队太久，能不能优化下排队时间。数据都在他们机房，暂时不上公有云，这是硬要求。",
+      "requirement_points": [
+        {
+          "id": "RP-01",
+          "label": "scheduling",
+          "label_cn": "作业调度效率",
+          "evidence": [
+            {
+              "quote": "排队",
+              "start": 84,
+              "end": 86
+            },
+            {
+              "quote": "排队",
+              "start": 95,
+              "end": 97
+            }
+          ],
+          "traceable": true
+        },
+        {
+          "id": "RP-02",
+          "label": "compliance",
+          "label_cn": "合规与数据驻留",
+          "evidence": [
+            {
+              "quote": "机房",
+              "start": 106,
+              "end": 108
+            },
+            {
+              "quote": "不上公有云",
+              "start": 111,
+              "end": 116
+            }
+          ],
+          "traceable": true
+        },
+        {
+          "id": "RP-03",
+          "label": "competitor",
+          "label_cn": "竞品认知",
+          "evidence": [
+            {
+              "quote": "华为",
+              "start": 47,
+              "end": 49
+            },
+            {
+              "quote": "阿里",
+              "start": 51,
+              "end": 53
+            },
+            {
+              "quote": "对标",
+              "start": 63,
+              "end": 65
+            }
+          ],
+          "traceable": true
+        },
+        {
+          "id": "RP-04",
+          "label": "migration",
+          "label_cn": "资源迁移纳管",
+          "evidence": [
+            {
+              "quote": "放到云上",
+              "start": 34,
+              "end": 38
+            },
+            {
+              "quote": "统一管",
+              "start": 38,
+              "end": 41
+            }
+          ],
+          "traceable": true
+        },
+        {
+          "id": "RP-05",
+          "label": "ops_efficiency",
+          "label_cn": "运维管理效率",
+          "evidence": [
+            {
+              "quote": "运维",
+              "start": 8,
+              "end": 10
+            },
+            {
+              "quote": "管理麻烦",
+              "start": 20,
+              "end": 24
+            }
+          ],
+          "traceable": true
+        }
+      ],
+      "constraints": [
+        {
+          "type": "数据不上公有云",
+          "quote": "不上公有云",
+          "start": 111
+        },
+        {
+          "type": "暂不上云",
+          "quote": "暂时不上公有云",
+          "start": 109
+        },
+        {
+          "type": "数据驻留",
+          "quote": "数据都在他们机房",
+          "start": 100
+        },
+        {
+          "type": "禁止项",
+          "quote": "不能对标讲讲",
+          "start": 61
+        }
+      ],
+      "data_residency": "数据不上公有云",
+      "priority": "待补充",
+      "expected_metrics": "未提取到",
+      "source": {
+        "channel": "客户现场",
+        "received_at": "2026-09-08",
+        "reporter": "华东区售前"
+      },
+      "_quality": {
+        "required_total": 6,
+        "required_filled": 4,
+        "missing_fields": [
+          "priority",
+          "expected_metrics"
+        ],
+        "completeness": 0.6667,
+        "note": "完整率是**需求澄清进度**的可测量指标，不是文档质量指标。需求刚收集时必然不完整 —— 需要在澄清会上补齐。"
+      },
+      "_note": "「期望指标」保持为「未提取到」—— **需求原文未给出可量化指标时不编数字**，由产品经理与客户在需求澄清会上补齐。"
+    }
+  ],
+  "competitor": {
+    "vendors": [
+      "Aliyun",
+      "HuaweiCloud",
+      "Sugon",
+      "TencentCloud"
+    ],
+    "layers": [
+      "IaaS",
+      "PaaS",
+      "DAAS",
+      "MASS",
+      "SaaS"
+    ],
+    "matrix": {
+      "Aliyun": {
+        "IaaS": {
+          "vendor": "Aliyun",
+          "vendor_label": "阿里云",
+          "layer": "IaaS",
+          "layer_label": "基础设施即服务",
+          "products": [
+            {
+              "name": "云服务器 ECS",
+              "category": "compute",
+              "category_label": "通用计算",
+              "positioning": "安全可靠弹性可伸缩的云计算服务",
+              "cite": "Aliyun/云服务器 ECS（来源 V3，可信度 official）"
+            },
+            {
+              "name": "GPU 云服务器",
+              "category": "gpu",
+              "category_label": "GPU 算力",
+              "positioning": "GPU 弹性算力",
+              "cite": "Aliyun/GPU 云服务器（来源 V3，可信度 official）"
+            },
+            {
+              "name": "对象存储 OSS",
+              "category": "storage",
+              "category_label": "存储",
+              "positioning": "稳定安全高性价比高性能云存储",
+              "cite": "Aliyun/对象存储 OSS（来源 V3，可信度 official）"
+            },
+            {
+              "name": "文件存储 NAS / CPFS",
+              "category": "storage",
+              "category_label": "存储",
+              "positioning": "共享文件与并行文件存储",
+              "cite": "Aliyun/文件存储 NAS / CPFS（来源 V3，可信度 official）"
+            },
+            {
+              "name": "负载均衡 SLB",
+              "category": "network",
+              "category_label": "网络",
+              "positioning": "按需分发的流量负载",
+              "cite": "Aliyun/负载均衡 SLB（来源 V3，可信度 official）"
+            },
+            {
+              "name": "专有网络 VPC",
+              "category": "network",
+              "category_label": "网络",
+              "positioning": "网络隔离",
+              "cite": "Aliyun/专有网络 VPC（来源 V3，可信度 official）"
+            },
+            {
+              "name": "弹性高性能计算 E-HPC",
+              "category": "hpc",
+              "category_label": "HPC 高性能计算",
+              "positioning": "高性能计算集群",
+              "cite": "Aliyun/弹性高性能计算 E-HPC（来源 V3，可信度 official）"
+            }
+          ],
+          "count": 7,
+          "categories": [
+            "compute",
+            "gpu",
+            "hpc",
+            "network",
+            "storage"
+          ]
+        },
+        "PaaS": {
+          "vendor": "Aliyun",
+          "vendor_label": "阿里云",
+          "layer": "PaaS",
+          "layer_label": "平台即服务",
+          "products": [
+            {
+              "name": "容器服务 Kubernetes 版 ACK",
+              "category": "container",
+              "category_label": "容器",
+              "positioning": "Kubernetes 托管服务",
+              "cite": "Aliyun/容器服务 Kubernetes 版 ACK（来源 V3，可信度 official）"
+            },
+            {
+              "name": "容器计算服务 ACS",
+              "category": "container",
+              "category_label": "容器",
+              "positioning": "以 K8s 为界面的容器算力",
+              "cite": "Aliyun/容器计算服务 ACS（来源 V3，可信度 official）"
+            },
+            {
+              "name": "云数据库 RDS",
+              "category": "database",
+              "category_label": "数据库",
+              "positioning": "全托管多引擎数据库",
+              "cite": "Aliyun/云数据库 RDS（来源 V3，可信度 official）"
+            },
+            {
+              "name": "云原生数据库 PolarDB",
+              "category": "database",
+              "category_label": "数据库",
+              "positioning": "兼容 MySQL/PostgreSQL/Oracle",
+              "cite": "Aliyun/云原生数据库 PolarDB（来源 V3，可信度 official）"
+            },
+            {
+              "name": "人工智能平台 PAI",
+              "category": "ai_platform",
+              "category_label": "AI 平台",
+              "positioning": "一站式 AI 开发训练推理服务",
+              "cite": "Aliyun/人工智能平台 PAI（来源 V3，可信度 official）"
+            },
+            {
+              "name": "大模型服务平台百炼",
+              "category": "ai_platform",
+              "category_label": "AI 平台",
+              "positioning": "大模型推理训练与应用构建",
+              "cite": "Aliyun/大模型服务平台百炼（来源 V3，可信度 official）"
+            },
+            {
+              "name": "云原生大数据计算 MaxCompute",
+              "category": "bigdata",
+              "category_label": "大数据",
+              "positioning": "企业级 SaaS 模式云数据仓库",
+              "cite": "Aliyun/云原生大数据计算 MaxCompute（来源 V3，可信度 official）"
+            },
+            {
+              "name": "大数据开发治理平台 DataWorks",
+              "category": "bigdata",
+              "category_label": "大数据",
+              "positioning": "智能数据开发治理平台",
+              "cite": "Aliyun/大数据开发治理平台 DataWorks（来源 V3，可信度 official）"
+            },
+            {
+              "name": "函数计算 FC",
+              "category": "serverless",
+              "category_label": "Serverless",
+              "positioning": "事件驱动 Serverless 计算",
+              "cite": "Aliyun/函数计算 FC（来源 V3，可信度 official）"
+            }
+          ],
+          "count": 9,
+          "categories": [
+            "ai_platform",
+            "bigdata",
+            "container",
+            "database",
+            "serverless"
+          ]
+        },
+        "DAAS": {
+          "vendor": "Aliyun",
+          "vendor_label": "阿里云",
+          "layer": "DAAS",
+          "layer_label": "数据即服务",
+          "products": [],
+          "count": 0,
+          "categories": []
+        },
+        "MASS": {
+          "vendor": "Aliyun",
+          "vendor_label": "阿里云",
+          "layer": "MASS",
+          "layer_label": "异构算力即服务",
+          "products": [
+            {
+              "name": "云盒",
+              "category": "-",
+              "category_label": "-",
+              "positioning": "专有云与混合云交付形态",
+              "cite": "Aliyun/云盒（来源 V3，可信度 official）"
+            }
+          ],
+          "count": 1,
+          "categories": [
+            "-"
+          ]
+        },
+        "SaaS": {
+          "vendor": "Aliyun",
+          "vendor_label": "阿里云",
+          "layer": "SaaS",
+          "layer_label": "软件即服务",
+          "products": [],
+          "count": 0,
+          "categories": []
+        }
+      },
+      "HuaweiCloud": {
+        "IaaS": {
+          "vendor": "HuaweiCloud",
+          "vendor_label": "华为云",
+          "layer": "IaaS",
+          "layer_label": "基础设施即服务",
+          "products": [
+            {
+              "name": "弹性云服务器 ECS",
+              "category": "compute",
+              "category_label": "通用计算",
+              "positioning": "通用计算，可弹性伸缩与自动伸缩",
+              "cite": "HuaweiCloud/弹性云服务器 ECS（来源 V2，可信度 official）"
+            },
+            {
+              "name": "裸金属服务器 BMS",
+              "category": "compute",
+              "category_label": "通用计算",
+              "positioning": "物理服务器，性能与隔离性优先",
+              "cite": "HuaweiCloud/裸金属服务器 BMS（来源 V2，可信度 official）"
+            },
+            {
+              "name": "GPU 加速云服务器 GACS",
+              "category": "gpu",
+              "category_label": "GPU 算力",
+              "positioning": "GPU 弹性算力",
+              "cite": "HuaweiCloud/GPU 加速云服务器 GACS（来源 V2，可信度 official）"
+            },
+            {
+              "name": "对象存储服务 OBS",
+              "category": "storage",
+              "category_label": "存储",
+              "positioning": "稳定安全高效的云存储",
+              "cite": "HuaweiCloud/对象存储服务 OBS（来源 V2，可信度 official）"
+            },
+            {
+              "name": "弹性文件服务 SFS",
+              "category": "storage",
+              "category_label": "存储",
+              "positioning": "完全托管的共享文件存储",
+              "cite": "HuaweiCloud/弹性文件服务 SFS（来源 V2，可信度 official）"
+            },
+            {
+              "name": "云硬盘 EVS",
+              "category": "storage",
+              "category_label": "存储",
+              "positioning": "块存储",
+              "cite": "HuaweiCloud/云硬盘 EVS（来源 V2，可信度 official）"
+            },
+            {
+              "name": "虚拟私有云 VPC",
+              "category": "network",
+              "category_label": "网络",
+              "positioning": "网络隔离",
+              "cite": "HuaweiCloud/虚拟私有云 VPC（来源 V2，可信度 official）"
+            },
+            {
+              "name": "弹性公网 IP EIP",
+              "category": "network",
+              "category_label": "网络",
+              "positioning": "独立公网 IP 资源",
+              "cite": "HuaweiCloud/弹性公网 IP EIP（来源 V2，可信度 official）"
+            }
+          ],
+          "count": 8,
+          "categories": [
+            "compute",
+            "gpu",
+            "network",
+            "storage"
+          ]
+        },
+        "PaaS": {
+          "vendor": "HuaweiCloud",
+          "vendor_label": "华为云",
+          "layer": "PaaS",
+          "layer_label": "平台即服务",
+          "products": [
+            {
+              "name": "AI 开发平台 ModelArts",
+              "category": "ai_platform",
+              "category_label": "AI 平台",
+              "positioning": "面向 AI 开发者的一站式开发平台",
+              "cite": "HuaweiCloud/AI 开发平台 ModelArts（来源 V2，可信度 official）"
+            },
+            {
+              "name": "云数据库 GaussDB",
+              "category": "database",
+              "category_label": "数据库",
+              "positioning": "企业级分布式数据库",
+              "cite": "HuaweiCloud/云数据库 GaussDB（来源 V2，可信度 official）"
+            },
+            {
+              "name": "云搜索服务 CSS",
+              "category": "search",
+              "category_label": "检索",
+              "positioning": "多条件检索与分析",
+              "cite": "HuaweiCloud/云搜索服务 CSS（来源 V2，可信度 official）"
+            },
+            {
+              "name": "函数工作流 FunctionGraph",
+              "category": "serverless",
+              "category_label": "Serverless",
+              "positioning": "事件驱动的函数编排",
+              "cite": "HuaweiCloud/函数工作流 FunctionGraph（来源 V2，可信度 official）"
+            },
+            {
+              "name": "专属计算集群服务 DCC",
+              "category": "hpc",
+              "category_label": "HPC 高性能计算",
+              "positioning": "资源物理隔离的专属计算资源池",
+              "cite": "HuaweiCloud/专属计算集群服务 DCC（来源 V2，可信度 official）"
+            }
+          ],
+          "count": 5,
+          "categories": [
+            "ai_platform",
+            "database",
+            "hpc",
+            "search",
+            "serverless"
+          ]
+        },
+        "DAAS": {
+          "vendor": "HuaweiCloud",
+          "vendor_label": "华为云",
+          "layer": "DAAS",
+          "layer_label": "数据即服务",
+          "products": [],
+          "count": 0,
+          "categories": []
+        },
+        "MASS": {
+          "vendor": "HuaweiCloud",
+          "vendor_label": "华为云",
+          "layer": "MASS",
+          "layer_label": "异构算力即服务",
+          "products": [],
+          "count": 0,
+          "categories": []
+        },
+        "SaaS": {
+          "vendor": "HuaweiCloud",
+          "vendor_label": "华为云",
+          "layer": "SaaS",
+          "layer_label": "软件即服务",
+          "products": [],
+          "count": 0,
+          "categories": []
+        }
+      },
+      "Sugon": {
+        "IaaS": {
+          "vendor": "Sugon",
+          "vendor_label": "曙光先进计算机",
+          "layer": "IaaS",
+          "layer_label": "基础设施即服务",
+          "products": [
+            {
+              "name": "曙光云",
+              "category": "-",
+              "category_label": "-",
+              "positioning": "高端计算与算力服务，IaaS 面向 HPC 与 AI 集群场景",
+              "cite": "Sugon/曙光云（来源 V1，可信度 secondary）"
+            }
+          ],
+          "count": 1,
+          "categories": [
+            "-"
+          ]
+        },
+        "PaaS": {
+          "vendor": "Sugon",
+          "vendor_label": "曙光先进计算机",
+          "layer": "PaaS",
+          "layer_label": "平台即服务",
+          "products": [
+            {
+              "name": "曙光云 PaaS",
+              "category": "-",
+              "category_label": "-",
+              "positioning": "平台层，含数据与 AI 平台能力",
+              "cite": "Sugon/曙光云 PaaS（来源 V1，可信度 secondary）"
+            }
+          ],
+          "count": 1,
+          "categories": [
+            "-"
+          ]
+        },
+        "DAAS": {
+          "vendor": "Sugon",
+          "vendor_label": "曙光先进计算机",
+          "layer": "DAAS",
+          "layer_label": "数据即服务",
+          "products": [
+            {
+              "name": "Sugon AI4S 平台",
+              "category": "-",
+              "category_label": "-",
+              "positioning": "AI4S 算力服务，6 万卡集群与国家超算互联网",
+              "cite": "Sugon/Sugon AI4S 平台（来源 V1，可信度 secondary）"
+            }
+          ],
+          "count": 1,
+          "categories": [
+            "-"
+          ]
+        },
+        "MASS": {
+          "vendor": "Sugon",
+          "vendor_label": "曙光先进计算机",
+          "layer": "MASS",
+          "layer_label": "异构算力即服务",
+          "products": [
+            {
+              "name": "先进计算服务",
+              "category": "-",
+              "category_label": "-",
+              "positioning": "高端计算机与存储系统产品",
+              "cite": "Sugon/先进计算服务（来源 V1，可信度 secondary）"
+            }
+          ],
+          "count": 1,
+          "categories": [
+            "-"
+          ]
+        },
+        "SaaS": {
+          "vendor": "Sugon",
+          "vendor_label": "曙光先进计算机",
+          "layer": "SaaS",
+          "layer_label": "软件即服务",
+          "products": [],
+          "count": 0,
+          "categories": []
+        }
+      },
+      "TencentCloud": {
+        "IaaS": {
+          "vendor": "TencentCloud",
+          "vendor_label": "腾讯云",
+          "layer": "IaaS",
+          "layer_label": "基础设施即服务",
+          "products": [
+            {
+              "name": "云服务器 CVM",
+              "category": "compute",
+              "category_label": "通用计算",
+              "positioning": "弹性计算",
+              "cite": "TencentCloud/云服务器 CVM（来源 V4，可信度 secondary）"
+            },
+            {
+              "name": "轻量应用服务器",
+              "category": "compute",
+              "category_label": "通用计算",
+              "positioning": "轻量入门",
+              "cite": "TencentCloud/轻量应用服务器（来源 V4，可信度 secondary）"
+            },
+            {
+              "name": "对象存储 COS",
+              "category": "storage",
+              "category_label": "存储",
+              "positioning": "云存储",
+              "cite": "TencentCloud/对象存储 COS（来源 V4，可信度 secondary）"
+            },
+            {
+              "name": "云硬盘 CBS",
+              "category": "storage",
+              "category_label": "存储",
+              "positioning": "块存储",
+              "cite": "TencentCloud/云硬盘 CBS（来源 V4，可信度 secondary）"
+            },
+            {
+              "name": "私有网络 VPC",
+              "category": "network",
+              "category_label": "网络",
+              "positioning": "网络隔离",
+              "cite": "TencentCloud/私有网络 VPC（来源 V4，可信度 secondary）"
+            }
+          ],
+          "count": 5,
+          "categories": [
+            "compute",
+            "network",
+            "storage"
+          ]
+        },
+        "PaaS": {
+          "vendor": "TencentCloud",
+          "vendor_label": "腾讯云",
+          "layer": "PaaS",
+          "layer_label": "平台即服务",
+          "products": [
+            {
+              "name": "TKE 容器服务",
+              "category": "container",
+              "category_label": "容器",
+              "positioning": "Kubernetes 托管服务",
+              "cite": "TencentCloud/TKE 容器服务（来源 V4，可信度 secondary）"
+            },
+            {
+              "name": "云数据库 TDSQL",
+              "category": "database",
+              "category_label": "数据库",
+              "positioning": "分布式数据库",
+              "cite": "TencentCloud/云数据库 TDSQL（来源 V4，可信度 secondary）"
+            },
+            {
+              "name": "TI-ONE 机器学习平台",
+              "category": "ai_platform",
+              "category_label": "AI 平台",
+              "positioning": "AI 开发训练平台",
+              "cite": "TencentCloud/TI-ONE 机器学习平台（来源 V4，可信度 secondary）"
+            },
+            {
+              "name": "Serverless 云函数",
+              "category": "serverless",
+              "category_label": "Serverless",
+              "positioning": "事件驱动函数计算",
+              "cite": "TencentCloud/Serverless 云函数（来源 V4，可信度 secondary）"
+            },
+            {
+              "name": "大数据套件 EMR",
+              "category": "bigdata",
+              "category_label": "大数据",
+              "positioning": "大数据平台",
+              "cite": "TencentCloud/大数据套件 EMR（来源 V4，可信度 secondary）"
+            }
+          ],
+          "count": 5,
+          "categories": [
+            "ai_platform",
+            "bigdata",
+            "container",
+            "database",
+            "serverless"
+          ]
+        },
+        "DAAS": {
+          "vendor": "TencentCloud",
+          "vendor_label": "腾讯云",
+          "layer": "DAAS",
+          "layer_label": "数据即服务",
+          "products": [],
+          "count": 0,
+          "categories": []
+        },
+        "MASS": {
+          "vendor": "TencentCloud",
+          "vendor_label": "腾讯云",
+          "layer": "MASS",
+          "layer_label": "异构算力即服务",
+          "products": [],
+          "count": 0,
+          "categories": []
+        },
+        "SaaS": {
+          "vendor": "TencentCloud",
+          "vendor_label": "腾讯云",
+          "layer": "SaaS",
+          "layer_label": "软件即服务",
+          "products": [],
+          "count": 0,
+          "categories": []
+        }
+      }
+    },
+    "product_count": 44,
+    "coverage": {
+      "vendor_total": 4,
+      "vendor_covered": 4,
+      "vendor_rate": 1.0,
+      "layer_total": 5,
+      "layer_covered": 4,
+      "layer_rate": 0.8,
+      "category_total": 12,
+      "category_covered": 12,
+      "category_rate": 1.0
+    },
+    "gaps": [
+      {
+        "vendor": "Aliyun",
+        "vendor_label": "阿里云",
+        "layer": "DAAS",
+        "layer_label": "数据即服务",
+        "status": "未查到",
+        "note": "阿里云 在 数据即服务 层**未查到公开产品条目** —— 这是真实的信息缺口，不做推测填充"
+      },
+      {
+        "vendor": "Aliyun",
+        "vendor_label": "阿里云",
+        "layer": "SaaS",
+        "layer_label": "软件即服务",
+        "status": "未查到",
+        "note": "阿里云 在 软件即服务 层**未查到公开产品条目** —— 这是真实的信息缺口，不做推测填充"
+      },
+      {
+        "vendor": "HuaweiCloud",
+        "vendor_label": "华为云",
+        "layer": "DAAS",
+        "layer_label": "数据即服务",
+        "status": "未查到",
+        "note": "华为云 在 数据即服务 层**未查到公开产品条目** —— 这是真实的信息缺口，不做推测填充"
+      },
+      {
+        "vendor": "HuaweiCloud",
+        "vendor_label": "华为云",
+        "layer": "MASS",
+        "layer_label": "异构算力即服务",
+        "status": "未查到",
+        "note": "华为云 在 异构算力即服务 层**未查到公开产品条目** —— 这是真实的信息缺口，不做推测填充"
+      },
+      {
+        "vendor": "HuaweiCloud",
+        "vendor_label": "华为云",
+        "layer": "SaaS",
+        "layer_label": "软件即服务",
+        "status": "未查到",
+        "note": "华为云 在 软件即服务 层**未查到公开产品条目** —— 这是真实的信息缺口，不做推测填充"
+      },
+      {
+        "vendor": "Sugon",
+        "vendor_label": "曙光先进计算机",
+        "layer": "SaaS",
+        "layer_label": "软件即服务",
+        "status": "未查到",
+        "note": "曙光先进计算机 在 软件即服务 层**未查到公开产品条目** —— 这是真实的信息缺口，不做推测填充"
+      },
+      {
+        "vendor": "TencentCloud",
+        "vendor_label": "腾讯云",
+        "layer": "DAAS",
+        "layer_label": "数据即服务",
+        "status": "未查到",
+        "note": "腾讯云 在 数据即服务 层**未查到公开产品条目** —— 这是真实的信息缺口，不做推测填充"
+      },
+      {
+        "vendor": "TencentCloud",
+        "vendor_label": "腾讯云",
+        "layer": "MASS",
+        "layer_label": "异构算力即服务",
+        "status": "未查到",
+        "note": "腾讯云 在 异构算力即服务 层**未查到公开产品条目** —— 这是真实的信息缺口，不做推测填充"
+      },
+      {
+        "vendor": "TencentCloud",
+        "vendor_label": "腾讯云",
+        "layer": "SaaS",
+        "layer_label": "软件即服务",
+        "status": "未查到",
+        "note": "腾讯云 在 软件即服务 层**未查到公开产品条目** —— 这是真实的信息缺口，不做推测填充"
+      }
+    ],
+    "gap_count": 9,
+    "discipline": "**只录公开信息、每条注明来源与日期、不做优劣评分。**\nJD 要求的是对主流云厂商的「认知有加分」，不是评判谁更强 —— 所以本矩阵不排名、不打分、不收录价格与 SLA。\n空白项是输出的一部分：知道对方没什么，与知道对方有什么同样重要。",
+    "assumption_refs": [
+      "B-01",
+      "B-02",
+      "B-03"
+    ]
+  },
+  "report": {
+    "period": "周报",
+    "generated_at": "2026-10-04",
+    "kpi": [
+      {
+        "name": "需求数",
+        "value": 1,
+        "unit": "条",
+        "definition": "期内收集的客户需求条目数"
+      },
+      {
+        "name": "需求点总数",
+        "value": 5,
+        "unit": "个",
+        "definition": "按 A-01 规则从原始诉求拆出的需求点数量"
+      },
+      {
+        "name": "平均字段完整率",
+        "value": 0.6667,
+        "unit": "",
+        "definition": "已填必填字段数 ÷ 必填字段总数",
+        "note": "这是**需求澄清进度**，不是文档质量"
+      },
+      {
+        "name": "竞品厂商覆盖率",
+        "value": 1.0,
+        "unit": "",
+        "definition": "有产品条目的厂商数 ÷ 厂商总数"
+      },
+      {
+        "name": "竞品层覆盖率",
+        "value": 0.8,
+        "unit": "",
+        "definition": "有产品条目的层数 ÷ 5 层"
+      },
+      {
+        "name": "能力域覆盖率",
+        "value": 1.0,
+        "unit": "",
+        "definition": "有产品条目的能力域数 ÷ 全部能力域数"
+      },
+      {
+        "name": "竞品空白项",
+        "value": 9,
+        "unit": "格",
+        "definition": "某厂商在某层未查到公开产品的格子数",
+        "note": "空白项是信息，不是缺陷"
+      }
+    ],
+    "requirement_distribution": [
+      {
+        "label": "作业调度效率",
+        "key": "scheduling",
+        "count": 1,
+        "share": 0.2
+      },
+      {
+        "label": "合规与数据驻留",
+        "key": "compliance",
+        "count": 1,
+        "share": 0.2
+      },
+      {
+        "label": "竞品认知",
+        "key": "competitor",
+        "count": 1,
+        "share": 0.2
+      },
+      {
+        "label": "资源迁移纳管",
+        "key": "migration",
+        "count": 1,
+        "share": 0.2
+      },
+      {
+        "label": "运维管理效率",
+        "key": "ops_efficiency",
+        "count": 1,
+        "share": 0.2
+      }
+    ],
+    "pending_fields": [
+      {
+        "field": "priority",
+        "count": 1,
+        "note": "该字段在 1 条需求中待补充，**须在需求澄清会上补齐**"
+      },
+      {
+        "field": "expected_metrics",
+        "count": 1,
+        "note": "该字段在 1 条需求中待补充，**须在需求澄清会上补齐**"
+      }
+    ],
+    "competitor_snapshot": {
+      "vendors": [
+        "Aliyun",
+        "HuaweiCloud",
+        "Sugon",
+        "TencentCloud"
+      ],
+      "product_count": 44,
+      "gap_count": 9
+    },
+    "exclusions": [
+      "无业务营收数据，**不做营收预测**",
+      "无用户行为数据，**不做用户增长预测**",
+      "平均澄清轮次需真实工单记录，当前为占位值"
+    ]
+  }
+}
