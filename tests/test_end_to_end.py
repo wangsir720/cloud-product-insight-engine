@@ -68,7 +68,7 @@ def test_competitor_report_declares_gaps():
 
 
 def test_tech_talk_supports_bidding():
-    """JD 职责 6：支持售前及销售，完成技术交流、打单。"""
+    """技术交流材料需支持售前技术交流与投标。"""
     assert cli.main([]) == 0
     doc = _doc("tech_talk.md")
     assert "技术交流材料" in doc

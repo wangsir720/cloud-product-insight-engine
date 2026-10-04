@@ -2,7 +2,7 @@
 Sugon,IaaS,曙光云,-,高端计算与算力服务，IaaS 面向 HPC 与 AI 集群场景,V1,secondary,2026-10-04,官网产品页未公开完整 SKU 清单
 Sugon,PaaS,曙光云 PaaS,-,平台层，含数据与 AI 平台能力,V1,secondary,2026-10-04,官网产品分类口径
 Sugon,DAAS,Sugon AI4S 平台,-,AI4S 算力服务，6 万卡集群与国家超算互联网,V1,secondary,2026-10-04,2025-04 发布会口径
-Sugon,MASS,先进计算服务,-,高端计算机与存储系统产品,V1,secondary,2026-10-04,2025 年报口径
+Sugon,MASS,先进计算服务,-,高端计算机与存储系统产品,V1,secondary,2026-10-04,官网公开产品页口径
 Sugon,SaaS,-,未查到,未查到 —— 官网未公开 SaaS 产品线分类,V1,unverified,2026-10-04,**未查到即留空，不推测**
 HuaweiCloud,IaaS,弹性云服务器 ECS,compute,通用计算，可弹性伸缩与自动伸缩,V2,official,2026-10-04,官网产品页
 HuaweiCloud,IaaS,裸金属服务器 BMS,compute,物理服务器，性能与隔离性优先,V2,official,2026-10-04,

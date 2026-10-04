@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """文档装配：需求说明书 / 竞品分析报告 / 技术交流材料 / 周月报。
 
-对应 JD 职责 2（需求说明书、使用手册、竞品分析报告）、
-职责 4（周/月分析报告）、职责 6（支持售前及销售，完成技术交流、打单）。
+覆盖需求说明书、使用手册、竞品分析报告、周/月分析报告，
+以及支持售前技术交流与投标的交付材料。
 
 用标准库字符串模板而非模板引擎 —— 保持零第三方依赖是本项目的一贯取舍。
 """
@@ -26,7 +26,7 @@ def _table(headers, rows) -> str:
 
 
 def render_prd(spec: dict) -> str:
-    """需求说明书（对应职责 2）。"""
+    """需求说明书。"""
     L = ["# 需求说明书 · %s" % spec["id"], ""]
     L.append("> 由 `src/doc_assembler.py` 自动装配。"
              "**客户场景为自拟，非真实业务数据。**")
@@ -97,7 +97,7 @@ def render_prd(spec: dict) -> str:
 
 
 def render_competitor_report(data: dict) -> str:
-    """竞品分析报告（对应职责 2、5）。"""
+    """竞品分析报告。"""
     L = ["# 云计算产品竞品对标报告", ""]
     L.append("> 由 `src/doc_assembler.py` 自动装配。"
              "**客户场景为自拟、非真实业务数据；产品数据为各厂商公开产品资料，"
@@ -115,7 +115,7 @@ def render_competitor_report(data: dict) -> str:
          "有产品条目的厂商占比"],
         ["层覆盖率", "%.0f%%（%d/%d）" % (cov["layer_rate"] * 100,
                                         cov["layer_covered"], cov["layer_total"]),
-         "有产品条目的云产品层数占比（JD 点名五层）"],
+         "有产品条目的云产品层数占比（五层口径）"],
         ["能力域覆盖率", "%.0f%%（%d/%d）" % (cov["category_rate"] * 100,
                                            cov["category_covered"], cov["category_total"]),
          "有产品条目的能力域占比"],
@@ -141,7 +141,7 @@ def render_competitor_report(data: dict) -> str:
     L.append(_table(["云产品层"] + [VENDOR_LABEL.get(v, v) for v in data["vendors"]],
                     matrix_rows))
     L.append("")
-    L.append("> **五层是 JD 职责 1 的原文点名项**（IaaS/PaaS/DAAS/MASS/SaaS），"
+    L.append("> **五层是行业通行的云服务分层口径**（IaaS/PaaS/DAAS/MASS/SaaS），"
              "不是本项目的自创分类。")
     L.append("")
 
@@ -177,7 +177,7 @@ def render_competitor_report(data: dict) -> str:
 
     L.append("## 4. 本报告未做的事")
     for line in [
-        "**不做优劣评分、不排名、不给推荐序**：JD 要求的是「认知有加分」，不是评判",
+        "**不做优劣评分、不排名、不给推荐序**：只做产品线认知层面对标，不做评判",
         "**不收录价格与 SLA 数字**：属商业条款，无稳定公开口径",
         "**不推测未公开的能力**：查不到就是查不到",
         "**不做营收或市场份额预测**：无数据",
@@ -191,7 +191,7 @@ def render_competitor_report(data: dict) -> str:
 
 
 def render_tech_talk(spec: dict, data: dict) -> str:
-    """技术交流材料（对应职责 6「支持售前及销售，完成技术交流、打单」）。"""
+    """技术交流材料（支持售前技术交流与投标）。"""
     L = ["# 技术交流材料 · %s" % spec["customer_industry"], ""]
     L.append("> 由 `src/doc_assembler.py` 自动装配。"
              "**客户场景为自拟，打单价格与商务条款不在本材料范围内。**")
@@ -251,7 +251,7 @@ def render_tech_talk(spec: dict, data: dict) -> str:
 
 
 def render_report(r: dict) -> str:
-    """周/月度数据分析报告（对应职责 4）。"""
+    """周/月度数据分析报告。"""
     L = ["# %s · 数据分析报告" % r["period"], ""]
     L.append("> 由 `src/doc_assembler.py` 生成，生成于 %s。"
              "**客户场景为自拟、非真实业务数据；数据源为本项目的需求管道，"

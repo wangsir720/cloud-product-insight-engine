@@ -20,7 +20,7 @@ TREND_JSON = os.path.join(DATA_DIR, "trends", "industry_trends.json")
 
 CREDIBILITY_ORDER = {"unverified": 0, "secondary": 1, "official": 2}
 
-# B-01 登记的五层产品（JD 职责 1 原文点名）
+# 登记的五层云产品口径
 LAYERS = ["IaaS", "PaaS", "DAAS", "MASS", "SaaS"]
 LAYER_LABEL = {
     "IaaS": "基础设施即服务",
@@ -93,7 +93,7 @@ class Row:
         """该行是否为有效产品条目。
 
         占位行（产品名写「未查到」或「-」）**不算覆盖** ——
-        曙光云的 SaaS 行就是占位：官网未公开该产品线，写上它会让矩阵虚高。
+        该厂商的 SaaS 行留空：官网未公开该产品线，写上它会让矩阵虚高。
         """
         return bool(self.key) and self.key not in (NOT_FOUND, "-")
 

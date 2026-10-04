@@ -18,7 +18,7 @@ from src.requirement_builder import build as build_spec
 # ---------------- 竞品矩阵 ----------------
 
 def test_matrix_covers_five_layers():
-    """五层是 JD 职责 1 原文点名项。"""
+    """五层是行业通行的云服务分层口径。"""
     d = build_matrix()
     assert d["layers"] == LAYERS
     assert len(d["layers"]) == 5
@@ -44,7 +44,7 @@ def test_every_product_has_citation():
 def test_gaps_are_reported_not_filled():
     """核心纪律：某厂商某层未查到就报空白，不推测填充。"""
     d = build_matrix()
-    assert d["gap_count"] > 0, "应存在空白项（曙光云 SaaS 等）"
+    assert d["gap_count"] > 0, "应存在空白项（个别厂商的 SaaS 层等）"
     for g in d["gaps"]:
         assert g["status"] == "未查到"
         assert "不做推测填充" in g["note"]
@@ -53,11 +53,11 @@ def test_gaps_are_reported_not_filled():
 def test_placeholder_rows_not_counted_as_coverage():
     """「未查到」占位行不得计入覆盖度。"""
     d = build_matrix()
-    # 曙光的 SaaS 行产品名为「未查到」，应计入空白而非覆盖
+    # 该厂商的 SaaS 行产品名为「未查到」，应计入空白而非覆盖
     sugon_saas = d["matrix"]["Sugon"]["SaaS"]
     assert sugon_saas["count"] == 0, "占位行不得计入产品数"
     assert any(g["vendor"] == "Sugon" and g["layer"] == "SaaS"
-               for g in d["gaps"]), "曙光的 SaaS 应出现在空白项里"
+               for g in d["gaps"]), "该厂商的 SaaS 应出现在空白项里"
 
 
 def test_coverage_rates_bounded():
@@ -78,7 +78,7 @@ def _matrix_data_only(d: dict) -> str:
 
 
 def test_no_ranking_or_scoring():
-    """核心纪律：JD 要的是「认知有加分」，不是评判。
+    """核心纪律：只做产品线认知层面对标，不评判谁更强。
 
     只查**数据字段**——纪律声明里必然出现「不做优劣评分」这些词。
     """
@@ -126,7 +126,7 @@ def test_flow_includes_clarification_loop():
     flow = requirement_flow(s)
     assert "需求澄清会" in flow
     assert "需补充" in flow, "必须有澄清后回流的路径"
-    assert "技术交流材料" in flow, "须覆盖 JD 职责 6 的打单支持"
+    assert "技术交流材料" in flow, "须覆盖技术交流与投标支持"
 
 
 def test_architecture_flow_covers_layers():
